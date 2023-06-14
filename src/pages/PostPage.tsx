@@ -71,7 +71,7 @@ const Comment = ({ comment, replies, isChild = true, boundaries }) => {
                     {boundaries[comment.id]?.map(reply => {
                         const replyObj = replies.find(rep => rep.id === reply);
                         return (
-                            <Comment key={reply} comment={replyObj} isChild={true} boundaries=null />
+                            <Comment key={reply} comment={replyObj} isChild={true} />
                         );
                     })}
                     {/*{replies?.map(reply => (*/}
