@@ -167,10 +167,8 @@ const ProductPageDynamic = () => {
           <h1>Specs</h1>
           // @ts-ignore
           <ol className="list-disc mt-4 ml-8">
-            {Array.isArray(product?.description) ? (
+            {product && product.description && Array.isArray(product.description) && (
     product.description.map((item) => <li key={item}>{item}</li>)
-  ) : (
-    <li>{product?.description}</li>
   )}
           </ol>
         </div>
