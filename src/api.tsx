@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {useQuery, useMutation, UseMutationResult, useQueryClient} from '@tanstack/react-query';
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = 'http://18.204.204.229:8000';
 
 export const fetchItems = async () => {
   const { data } = await axios.get(`${BASE_URL}/getAllItems`);
