@@ -5,7 +5,7 @@ import {useMutation, useQueryClient} from "@tanstack/react-query";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Comment = ({ comment, replies, isChild = true, boundaries }) => {
+const Comment = ({ comment, replies, isChild = true, boundaries}) => {
 
     const [showReplyForm, setShowReplyForm] = useState(false);
     const [reply, setReply] = useState('');
@@ -71,7 +71,7 @@ const Comment = ({ comment, replies, isChild = true, boundaries }) => {
                     {boundaries[comment.id]?.map(reply => {
                         const replyObj = replies.find(rep => rep.id === reply);
                         return (
-                            <Comment key={reply} comment={replyObj} isChild={true} />
+                            <Comment key={reply} comment={replyObj} isChild={true}  replies={null} boundaries={null}/>
                         );
                     })}
                     {/*{replies?.map(reply => (*/}
@@ -102,7 +102,7 @@ const PostPage = () => {
     const badtoaster = () => {
         toast.error("Sign in, please!", {toastId: "postError"});
     }
-    const { data, isLoading, error } = usePost(id);
+    const { data, isLoading, error } = usePost(id || "");
     
     if (isLoading) {
         return (
