@@ -102,9 +102,7 @@ const PostPage = () => {
     const badtoaster = () => {
         toast.error("Sign in, please!", {toastId: "postError"});
     }
-    if (id) {
-        const { data, isLoading, error } = usePost(id);
-    }
+    const { data, isLoading, error } = usePost(id);
     
     if (isLoading) {
         return (
