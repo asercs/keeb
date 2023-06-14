@@ -165,10 +165,10 @@ const ProductPageDynamic = () => {
         </div>
         <div className="font-bold">
           <h1>Specs</h1>
+          // @ts-ignore
           <ol className="list-disc mt-4 ml-8">
-            {product && product.description && product.description.map((item) => (
-    <li key={item}>{item}</li>
-  ))}
+            {product?.description?.map((item) => (
+              <li>{item}</li>))}
           </ol>
         </div>
       </div>
