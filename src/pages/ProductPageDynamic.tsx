@@ -166,7 +166,7 @@ const ProductPageDynamic = () => {
         <div className="font-bold">
           <h1>Specs</h1>
           <ol className="list-disc mt-4 ml-8">
-            {product?.description.map((item) => (
+            {product?.description?.map((item) => (
               <li>{item}</li>))}
 
           </ol>
