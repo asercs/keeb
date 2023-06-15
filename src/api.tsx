@@ -59,7 +59,7 @@ export const useSearch = (productName: string) => {
 export async function logout() {
   try {
     const response = await axios.post(
-      'http://localhost:8000/logout',
+      'https://redis.training.edetekapps.com/logout',
       {},
       { withCredentials: true },
     );
@@ -118,7 +118,7 @@ export const useNews = (id: string) => {
 // @ts-ignore
 export const changeQuantity = async ({ order, optionId, newQuantity }) => {
   try {
-    const response = await axios.patch(`http://localhost:8000/changeQuantity/${order}`, { optionId, quantity: newQuantity }, { withCredentials: true});
+    const response = await axios.patch(`https://redis.training.edetekapps.com/changeQuantity/${order}`, { optionId, quantity: newQuantity }, { withCredentials: true});
     if (response && response.data) {
       return response.data;
     } else {
@@ -142,7 +142,7 @@ export const useChangeQuantityMutation = () => {
 
 export const payNow = async (totalPrice: any) => {
   try {
-    const response = await axios.post("http://localhost:8000/payNow", {
+    const response = await axios.post("https://redis.training.edetekapps.com/payNow", {
       totalPrice: totalPrice
     }, { withCredentials: true });
 
