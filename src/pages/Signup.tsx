@@ -9,7 +9,7 @@ const Signup = () => {
   const submit = async (e: any) => {
     e.preventDefault();
 
-    await fetch('http://localhost:8000/register', {
+    await fetch('https://redis.training.edetekapps.com/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
