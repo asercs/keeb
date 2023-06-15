@@ -25,7 +25,7 @@ const ProductPageDynamic = () => {
   const { data: product, isLoading, error } = useItem({ order: order });
 
   const PutProduct = (activeItem: string) => {
-    fetch(`http://localhost:8000/addToCart/${order}`, {
+    fetch(`https://redis.training.edetekapps.com/addToCart/${order}`, {
     method: 'POST',
     credentials: 'include',
     body: JSON.stringify({
